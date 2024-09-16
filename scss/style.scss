@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@100;200;300;400;500;600;700&display=swap);
 @import "header";
 @import "main";
 @import "footer";
@@ -7,6 +8,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 html {
@@ -16,8 +19,8 @@ html {
 }
 
 body {
-    font-family: 'Hind Siliguri';
-    background-color: #fff;
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: $white_color;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -27,8 +30,44 @@ main {
     flex-grow: 1;
 }
 
+img {
+    display: flex;
+    margin-bottom: 0;
+}
+
+::selection {
+    background: $dark_color;
+    color: $main_color;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $dark_color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $main_color;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $light_color;
+    cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+$main_color:#FF7235;
+$dark_color:#292830;
+$light_color:#BDBDBD;
+$white_color:#fff;
 .container {
-    max-width: 1110px;
+    max-width: 1210px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;

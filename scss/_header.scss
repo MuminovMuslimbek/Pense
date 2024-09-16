@@ -1,3 +1,276 @@
-body {
-    background-color: #000;
+@mixin title_h1-2() {
+    margin: 0;
+    font-size: 9.6rem;
+    font-weight: 700;
+    line-height: 9.6rem;
+    color: $dark_color
+}
+
+@mixin paragraphs() {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.8rem;
+    color: $light_color;
+}
+
+$main_color:#FF7235;
+$dark_color:#292830;
+$light_color:#BDBDBD;
+$white_color:#fff;
+header {
+    padding: 5.7rem 0 21.1rem 0;
+    @media screen and (max-width: 960px) {
+        padding: 4.7rem 0 13.1rem 0;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 4.7rem 0 10.8rem 0;
+    }
+    @media screen and (max-width:540px) {
+        padding: 4.3rem 0 7.8rem 0;
+    }
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10.6rem;
+    @media screen and (max-width: 768px) {
+        gap: 5rem;
+    }
+    @media screen and (max-width:280px) {
+        gap: 3rem;
+    }
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: $white_color;
+        span {
+            padding: 0.8rem 1.1rem;
+            background-color: $main_color;
+            border-radius: 50%;
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 2.28rem;
+            color: $white_color;
+        }
+        p {
+            font-size: 2.3rem;
+            font-weight: 500;
+            line-height: 2.1rem;
+            color: $dark_color;
+        }
+    }
+    ul {
+        @extend .logo;
+        gap: 4rem;
+        a {
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.7rem;
+            color: $dark_color;
+            transition: 0.3s;
+            &:hover {
+                color: $light_color;
+                text-decoration: underline 3px $light_color;
+            }
+        }
+        @media screen and (max-width:768px) {
+            gap: 2.5rem;
+        }
+    }
+    button {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.7rem;
+        color: $main_color;
+        border: 1px solid $main_color;
+        border-radius: 0.8rem;
+        padding: 1.6rem 1.8rem;
+        background: none;
+        cursor: pointer;
+        transition: 0.3s;
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+    @media screen and (max-width: 768px) {
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+        ul {
+            display: none;
+        }
+    }
+    @media screen and (max-width:375px) {
+        gap: 0;
+        button {
+            font-size: 1.4rem;
+            padding: 1.2rem 1.4rem;
+        }
+    }
+    @media screen and (max-width:280px) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+nav {
+    @extend .header-top;
+    gap: 1.5rem;
+    @media (max-width: 960px) {
+        gap: 5rem;
+    }
+    @media screen and (max-width:768px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    @media (max-width:375px) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+.nav-left {
+    @extend .header-container;
+    gap: 4rem;
+    @media screen and (max-width: 960px) {
+        gap: 3rem;
+    }
+    @media screen and (max-width:768px) {
+        align-items: center;
+        gap: 2rem;
+    }
+    @media screen and (max-width:540px) {
+        gap: 1.5rem;
+    }
+}
+
+.nav-title {
+    @extend .header-container;
+    gap: 2rem;
+    h1 {
+        @include title_h1-2();
+    }
+    p {
+        @include paragraphs();
+    }
+    @media screen and (max-width: 960px) {
+        gap: 1.5rem;
+        h1 {
+            font-size: 6.4rem;
+            line-height: 6.4rem;
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        align-items: center;
+        gap: 1.3rem;
+        h1 {
+            max-width: 460px;
+            font-size: 4.9rem;
+            line-height: 5rem;
+        }
+        p {
+            max-width: 250px;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
+    }
+    @media screen and (max-width:540px) {
+        gap: 1.2rem;
+        h1 {
+            max-width: 340px;
+            font-size: 3.5rem;
+            line-height: 3.7rem;
+        }
+        p {
+            max-width: 207px;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+        }
+    }
+    @media screen and (max-width:375px) {
+        gap: 1rem;
+        h1 {
+            font-size: 3.2rem;
+            line-height: 3.4rem;
+            max-width: 280px;
+        }
+    }
+}
+
+.nav-button {
+    @extend .logo;
+    gap: 2.4rem;
+    button {
+        display: flex;
+        align-items: center;
+        padding: 1.8rem 2.4rem;
+        gap: 1rem;
+        background-color: $main_color;
+        color: $white_color;
+        font-size: 2.4rem;
+        line-height: 3.8rem;
+        @media (max-width: 960px) {
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            padding: 1.6rem 1.8rem;
+        }
+        @media (max-width:768px) {
+            font-size: 1.6rem;
+            padding: 1.4rem 1.6rem;
+        }
+        img {
+            width: 16px;
+        }
+        @media screen and (max-width:540px) {
+            gap: 0.5rem;
+            img {
+                width: 12px;
+            }
+        }
+    }
+    a {
+        @include paragraphs();
+        @media (max-width: 960px) {
+            font-size: 1.6rem;
+            line-height: 2.8rem;
+        }
+    }
+    @media screen and (max-width:540px) {
+        flex-direction: column-reverse;
+        gap: 0.8rem;
+        button {
+            font-size: 1.2rem;
+            padding: 0.8rem 1rem;
+        }
+        a {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+        }
+    }
+}
+
+.nav-img {
+    max-width: 538px;
+    width: 100%;
+    img {
+        max-width: 538px;
+        width: 100%;
+        max-height: 478px;
+        height: 100%;
+    }
 }

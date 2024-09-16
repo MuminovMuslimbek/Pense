@@ -1,0 +1,348 @@
+@mixin title_h1-2() {
+    margin: 0;
+    font-size: 9.6rem;
+    font-weight: 700;
+    line-height: 9.6rem;
+    color: $dark_color
+}
+
+@mixin paragraphs() {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.8rem;
+    color: $light_color;
+}
+
+@mixin span() {
+    font-family: "Hind Siliguri";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 35.57px;
+    text-transform: uppercase;
+    color: $light_color;
+}
+
+@mixin a_href() {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $main_color;
+}
+
+$main_color:#FF7235;
+$dark_color:#292830;
+$light_color:#BDBDBD;
+$white_color:#fff;
+.overview {
+    background-color: $main_color;
+    padding-top: 8.7rem;
+    background-image: url('../images/overview-bg1.png'), url('../images/overview-bg2.png');
+    background-position: right top, left bottom;
+    background-repeat: no-repeat, no-repeat;
+    @media screen and (max-width: 540px) {
+        padding-top: 5.7rem;
+    }
+    .overview__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .overview-img {
+            max-width: 1110px;
+            width: 100%;
+            img {
+                max-width: 1110px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.pense-link {
+    padding: 8.2rem 0 6.6rem 0;
+}
+
+.pense-link__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    img {
+        transition: transform 0.5s ease;
+        transform-origin: center;
+        &:hover {
+            animation: centerShakeEffect 0.7s ease-in-out 1;
+        }
+        @keyframes centerShakeEffect {
+            0% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-10px) translateX(-10px) rotate(5deg) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(10px) translateX(-10px) rotate(-5deg) rotate(5deg);
+            }
+            75% {
+                transform: translateY(-10px) translateX(-10px) rotate(5deg) rotate(-5deg);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    }
+    @media screen and (max-width:768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+    }
+}
+
+.alwalys {
+    padding: 14.2rem 0;
+    @media (max-width: 960px) {
+        padding: 8.2rem 0;
+    }
+    @media screen and (max-width:768px) {
+        padding: 0 0 6.2rem 0;
+    }
+    @media (max-width:375px) {
+        flex-direction: column;
+        gap: 0 0 4.2rem 0;
+    }
+}
+
+.alwalys__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    .alwalys-title {
+        max-width: 540px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 2.4rem;
+        span {
+            @include span();
+        }
+        h2 {
+            @include title_h1-2();
+        }
+        p {
+            @include paragraphs();
+        }
+        a {
+            @include a_href();
+        }
+        @media screen and (max-width: 960px) {
+            max-width: 340px;
+            width: 100%;
+            gap: 1.5rem;
+            h2 {
+                font-size: 6.4rem;
+                line-height: 6.4rem;
+            }
+            p {
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            max-width: 500px;
+            align-items: center;
+            gap: 1.3rem;
+            h2 {
+                font-size: 4.9rem;
+                line-height: 5rem;
+            }
+            p {
+                max-width: 300px;
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+            }
+        }
+        @media screen and (max-width:540px) {
+            gap: 1.2rem;
+            h2 {
+                max-width: 340px;
+                font-size: 3.5rem;
+                line-height: 3.7rem;
+            }
+            p {
+                max-width: 207px;
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+            }
+        }
+        @media screen and (max-width:375px) {
+            gap: 1rem;
+            h2 {
+                font-size: 3.2rem;
+                line-height: 3.4rem;
+                max-width: 280px;
+            }
+        }
+    }
+    .alwalys-img {
+        max-width: 539px;
+        width: 100%;
+        img {
+            max-width: 539px;
+            width: 100%;
+        }
+    }
+    @media screen and (max-width:768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        text-align: center;
+        a {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+        }
+    }
+}
+
+.cost {
+    background-color: #FFFAF8;
+}
+
+.cost__container {
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.product {
+    padding: 13.9rem 0;
+    .product__container {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+    }
+}
+
+.product-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    h2 {
+        @include title_h1-2();
+        max-width: 730px;
+    }
+    p {
+        @include paragraphs();
+        max-width: 350px;
+    }
+    @media screen and (max-width: 960px) {
+        gap: 1.5rem;
+        h2 {
+            font-size: 6.4rem;
+            line-height: 6.4rem;
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.3rem;
+        text-align: center;
+        h2 {
+            max-width: 469px;
+            font-size: 4.9rem;
+            line-height: 5rem;
+        }
+        p {
+            max-width: 280px;
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+    }
+    @media screen and (max-width:375px) {
+        gap: 1rem;
+        h2 {
+            font-size: 3.2rem;
+            line-height: 3.4rem;
+            max-width: 280px;
+        }
+        p {
+            max-width: 230px;
+        }
+    }
+}
+
+.product-card-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    .product-card {
+        max-width: 350px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 8.3rem 0 6.3rem 0;
+        border-radius: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0px 0px 50px 0px #0000000A;
+        transition: 0.3s;
+        &:hover {
+            transform: scale(0.95);
+            box-shadow: 0px 0px 50px 0px #00000021;
+            background-image: url(../images/icon/product-card-icon-right.svg);
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            background-position: 50% 83%;
+        }
+        h3 {
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 3rem;
+            color: $dark_color;
+            margin-top: 2rem;
+        }
+        p {
+            max-width: 220px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.2rem;
+            color: $light_color;
+            margin-top: -1.2rem;
+            margin-bottom: 2.4rem;
+        }
+    }
+    @media screen and (max-width:768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.flexible {}
+
+.flexible__container {}
+
+.container {}
+
+.flexible-bottom {}
+
+.flexible-card {}
+
+.flexible-card_menu {}
+
+.flexible-card_num {}
+
+.fa-sharp {}
+
+.fa-solid {}
+
+.fa-arrow-right {}
