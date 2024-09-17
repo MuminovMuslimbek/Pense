@@ -21,9 +21,20 @@
 </head>
 
 <body>
+    <span class="loader-input" id="loading-bar"></span>
     <div class="confetti-container"></div>
     <div id="loader-container">
         <img src="images/Animation.gif" alt="gif">
+    </div>
+    <div id="loader" class="loader-container">
+        <img src="images/animation-send_masseg.gif" alt="gif-masseg" width="300px">
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>No Fake Demo!</h2>
+            <button id="close-modal">Close</button>
+        </div>
     </div>
     <header>
         <div class=" header-container container ">
@@ -48,7 +59,7 @@
                         <a href=" # ">Feedback</a>
                     </li>
                 </ul>
-                <button>Request a demo</button>
+                <button id="find-food-button">Request a demo</button>
             </div>
             <nav>
                 <div class=" nav-left ">
@@ -140,7 +151,7 @@
                 </div>
         </section>
         <section class=" product ">
-            <div class=" product__container container " data-aos=" fade-up ">
+            <div class=" product__container container "data-aos=" fade-up ">
                 <div class=" product-title ">
                     <h2>The Product we work with.</h2>
                     <p>Tellus lacus morbi sagittis lacus in. Amet nisl at mauris enim aumsan nisi, tincidunt vel. Enim
@@ -233,7 +244,7 @@
             <div class=" countries__container container "data-aos=" fade-up ">
                 <h2>20M+ downloaded from 32 diffrent countires</h2>
                 <p>Try demo for 7 days with full features.</p>
-                <button>Try free demo <img src=" images/icon/countries.svg "></button>
+                <button class=" excellent-button ">Try free demo <img src=" images/icon/countries.svg "></button>
                 <div class=" countries-img ">
                     <img src=" images/layer.png " srcset=" images/layer.png 1x, images/layer_10@2x.png 2x "
                         alt=" img " />
@@ -272,9 +283,13 @@
                 <div class=" footer-email ">
                     <h3>Newsletter</h3>
                     <p>Over 25000 people have subscribed</p>
-                    <div class=" input ">
-                        <input type=" text " placeholder=" Enter your email ">
+                    <form class=" input " id=" subscribe-form ">
+                        <input type=" text " placeholder=" Enter your email " required>
                         <button type=" submit ">Subscribe</button>
+                    </form>
+                    <div id=" thank-you-message " style=" display:none; color: white; ">
+                        Qo'shilganingiz uchun katta raxmat!
+                        <button id=" close-btn ">Close</button>
                     </div>
                     <span>We don’t sell your email and spam</span>
                 </div>
@@ -290,17 +305,12 @@
             </div>
         </div>
     </footer>
-    <script src=" https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs "
-        type=" module "></script>
-    <dotlottie-player src=" https://lottie.host/c8a47bb4-d18e-416d-afa5-b55b388d7c19/ZOvv97GhYs.json " background="
-                        transparent " speed=" 1 " style=" width: 300px; height: 300px; " loop
-        autoplay></dotlottie-player>
     <script src=" https://unpkg.com/aos@2.3.1/dist/aos.js "></script>
     <script>
         AOS.init();
     </script>
-        <script src=" js/app.js ">
-        </script>
+    <script src=" js/app.js ">
+    </script>
 </body>
 
 </html>

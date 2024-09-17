@@ -1,0 +1,206 @@
+$main_color:#FF7235;
+$dark_color:#292830;
+$light_color:#BDBDBD;
+$white_color:#fff;
+body.loading {
+    pointer-events: none;
+    // opacity: 0.7;
+    background-color: $white_color;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    animation-duration: calc(1s + 1.5s * random());
+    animation-iteration-count: 1;
+}
+
+.confetti-piece {
+    position: absolute;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    transform-origin: center;
+    animation-duration: calc(1.5s + 2.5s * random());
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    animation-duration: calc(0.3s + 0.3s * random());
+    transform: rotate(calc(360deg * random()));
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.parallax {
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+
+.bounce {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white_color;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1001;
+}
+
+.modal-content {
+    background-color: $white_color;
+    padding: 50px 70px;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    h2 {
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 5rem;
+        color: $dark_color;
+    }
+    button {
+        background-color: $main_color;
+        border: 2px solid $main_color;
+        color: $white_color;
+        padding: 15px 50px;
+        border-radius: 30px;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            background-color: $white_color;
+            border: 1px solid $main_color;
+            color: $main_color;
+        }
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.loader-input {
+    display: none;
+    /* Loader faqat submit bosilganda ko'rinadi */
+    position: relative;
+    height: 32px;
+    width: 200px;
+    background: #fff;
+    border: 2px solid #fff;
+    color: red;
+    overflow: hidden;
+}
+
+.loader-input::before {
+    content: '';
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    animation: none;
+    /* JavaScript orqali dinamik ravishda */
+}
+
+.loader-input::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(0, 255, 255);
+    mix-blend-mode: difference;
+    animation: none;
+    /* JavaScript orqali dinamik ravishda */
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+#loader,
+#modal {
+    display: none;
+}

@@ -1,3 +1,27 @@
+const findFoodButton = document.getElementById('find-food-button');
+const loader = document.getElementById('loader');
+const modal = document.getElementById('modal');
+const closeModalButton = document.getElementById('close-modal');
+
+findFoodButton.addEventListener('click', () => {
+    loader.style.display = 'flex';
+    document.body.classList.add('loading');
+
+    let loadingTime = 0;
+    const interval = setInterval(() => {
+        loadingTime += 1;
+        if (loadingTime >= 2) {
+            clearInterval(interval);
+            loader.style.display = 'none';
+            document.body.classList.remove('loading');
+            modal.style.display = 'flex';
+        }
+    }, 1000);
+});
+
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
 window.addEventListener('load', function() {
     document.getElementById('loader-container').style.display = 'flex';
     let loadingTime = 0;
@@ -57,3 +81,32 @@ function getRandomColor() {
     const colors = ['#ff0', '#f0f', '#0ff', '#f00', '#00f', '#0f0'];
     return colors[Math.floor(Math.random() * colors.length)];
 }
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Formni to'g'ridan-to'g'ri yubormaslik uchun
+
+    var loader = document.getElementById('loading-bar');
+    var thankYouMessage = document.getElementById('thank-you-message');
+
+    // Loaderni ko'rinishini ta'minlaymiz
+    loader.style.display = 'block';
+    var loaderWidth = 0;
+
+    // Loaderni setInterval orqali kengaytirish
+    var interval = setInterval(function() {
+        loaderWidth += 1;
+        loader.style.setProperty('--loader-width', loaderWidth + '%');
+        loader.style.width = loaderWidth + '%';
+
+        if (loaderWidth >= 100) {
+            clearInterval(interval); // Animatsiya tugashi bilan interval to'xtaydi
+            loader.style.display = 'none'; // Loader yashiriladi
+            thankYouMessage.style.display = 'block'; // Xabar ko'rsatiladi
+        }
+    }, 100); // Har 100ms loader 1% kengayadi
+});
+
+// Xabarni yopish uchun "close" tugmasi
+document.getElementById('close-btn').addEventListener('click', function() {
+    var thankYouMessage = document.getElementById('thank-you-message');
+    thankYouMessage.style.display = 'none'; // Xabarni yashirish
+});

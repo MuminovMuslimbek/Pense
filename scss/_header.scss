@@ -295,4 +295,9 @@ nav {
             transform: scale(1);
         }
     }
+    @media (max-width: 768px) {
+        img {
+            animation: none;
+        }
+    }
 }

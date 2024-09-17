@@ -68,14 +68,21 @@ $white_color:#fff;
 
 .pense-link {
     padding: 8.2rem 0 6.6rem 0;
+    @media screen and (max-width: 768px) {
+        padding: 4rem 0 4rem 0;
+    }
 }
 
 .pense-link__container {
+    max-width: 1110px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 2rem;
     img {
+        max-width: 161px;
+        width: 100%;
         transition: transform 0.5s ease;
         transform-origin: center;
         &:hover {
@@ -98,11 +105,6 @@ $white_color:#fff;
                 transform: translateY(0);
             }
         }
-    }
-    @media screen and (max-width:768px) {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 3rem;
     }
 }
 
@@ -213,12 +215,20 @@ $white_color:#fff;
                 transform: scale(1);
             }
         }
+        @media (max-width: 768px) {
+            img {
+                animation: none;
+            }
+        }
     }
     @media screen and (max-width:768px) {
         flex-direction: column;
         align-items: center;
         gap: 5rem;
         text-align: center;
+        img {
+            animation: scaleAnimation none;
+        }
         a {
             font-size: 1.4rem;
             line-height: 1.8rem;
