@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@100;200;300;400;500;600;700&display=swap);
+@import "loader.scss";
 @import "header";
 @import "main";
 @import "footer";
@@ -71,4 +72,97 @@ $white_color:#fff;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+//animation//
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    animation-duration: calc(1s + 1.5s * random());
+    animation-iteration-count: 1;
+}
+
+.confetti-piece {
+    position: absolute;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    transform-origin: center;
+    animation-duration: calc(1.5s + 2.5s * random());
+}
+
+.card {
+    @include bg-color($le: 300px, $ri: 110px, $b_l: 90px, $b_r: 80px);
+    @extend .block;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    animation-duration: calc(0.3s + 0.3s * random());
+    transform: rotate(calc(360deg * random()));
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) translateX(calc(-100px + 200px * random())) rotate(1080deg);
+    }
+}
+
+.parallax {
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+
+.bounce {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }

@@ -70,15 +70,19 @@ header {
     ul {
         @extend .logo;
         gap: 4rem;
+        li {
+            font-style: 1.8rem;
+            font-weight: 400;
+        }
         a {
             font-size: 1.8rem;
             font-weight: 400;
-            line-height: 1.7rem;
+            padding-bottom: -5px;
+            // line-height: 0.5rem;
             color: $dark_color;
-            transition: 0.3s;
+            // transition: 0.3s;
             &:hover {
-                color: $light_color;
-                text-decoration: underline 3px $light_color;
+                border-bottom: 3px solid $dark_color;
             }
         }
         @media screen and (max-width:768px) {
@@ -96,6 +100,10 @@ header {
         background: none;
         cursor: pointer;
         transition: 0.3s;
+        &:hover {
+            background-color: $main_color;
+            color: $white_color
+        }
         &:active {
             transform: scale(0.9);
         }
@@ -272,5 +280,19 @@ nav {
         width: 100%;
         max-height: 478px;
         height: 100%;
+        height: auto;
+        display: block;
+        animation: scaleAnimation 3s ease-in-out infinite;
+    }
+    @keyframes scaleAnimation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 }
