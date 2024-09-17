@@ -71,18 +71,33 @@ header {
         @extend .logo;
         gap: 4rem;
         li {
-            font-style: 1.8rem;
+            font-size: 1.8rem;
             font-weight: 400;
         }
         a {
             font-size: 1.8rem;
             font-weight: 400;
-            padding-bottom: -5px;
-            // line-height: 0.5rem;
             color: $dark_color;
-            // transition: 0.3s;
-            &:hover {
-                border-bottom: 3px solid $dark_color;
+            position: relative;
+            user-select: none;
+            transition: all 0.3s;
+            &::before {
+                content: '';
+                width: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                position: absolute;
+                bottom: 1px;
+                background-color: $dark_color;
+                transition: 0.3s ease;
+                margin: 0 auto;
+            }
+            &:hover::before {
+                width: 100%;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
             }
         }
         @media screen and (max-width:768px) {

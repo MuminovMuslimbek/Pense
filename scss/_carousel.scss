@@ -1,0 +1,115 @@
+.carousel {
+    padding: 121px 0;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    h2 {
+        max-width: 920px;
+        margin: 0;
+        font-size: 9.6rem;
+        font-weight: 700;
+        line-height: 9.6rem;
+        color: #292830;
+        text-align: center;
+    }
+    @media screen and (max-width: 960px) {
+        max-width: 340px;
+        width: 100%;
+        gap: 4.5rem;
+        h2 {
+            font-size: 6.4rem;
+            line-height: 6.4rem;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 500px;
+        align-items: center;
+        gap: 4.3rem;
+        h2 {
+            font-size: 4.9rem;
+            line-height: 5rem;
+        }
+    }
+    @media screen and (max-width:540px) {
+        gap: 4rem;
+        h2 {
+            max-width: 340px;
+            font-size: 3.5rem;
+            line-height: 3.7rem;
+        }
+    }
+    @media screen and (max-width:375px) {
+        gap: 3rem;
+        h2 {
+            font-size: 3.2rem;
+            line-height: 3.4rem;
+            max-width: 280px;
+        }
+    }
+}
+
+.carousel-card_main {
+    max-width: 1110px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 300px;
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 100%;
+    }
+}
+
+.carousel-card {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    cursor: pointer;
+    border: 1px solid #F5F5F5;
+    background-color: #fff;
+    padding: 16px 29px 26px 29px;
+    border-radius: 12px;
+    border-top: 10px solid #FFBE21;
+    transition: 0.3s;
+    p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 29.11px;
+        color: #000;
+    }
+    &:nth-child(2) {
+        border-top: 10px solid #4756DF;
+    }
+    &:nth-child(3) {
+        border-top: 10px solid #3EC1F3;
+    }
+    &:hover {
+        box-shadow: 0px 0px 50px 0px #00000021;
+        transform: scale(1.03);
+    }
+}
+
+.carousel-card_user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000;
+    h6 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 25.87px;
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25.87px;
+            color: #BDBDBD;
+        }
+    }
+}
