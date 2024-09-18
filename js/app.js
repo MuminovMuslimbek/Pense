@@ -50,7 +50,10 @@ document.querySelectorAll('footer a[href^="#"]').forEach(anchor => {
 });
 
 document.querySelector('.excellent-button').addEventListener('click', function() {
-    createConfetti(100);
+    createConfetti(200);
+});
+document.querySelector('.btn_confit').addEventListener('click', function() {
+    createConfetti(200);
 });
 
 function createConfetti(count) {
