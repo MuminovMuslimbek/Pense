@@ -1,5 +1,8 @@
 .carousel {
     padding: 121px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .card__container {
@@ -52,22 +55,35 @@
     }
 }
 
-.carousel-card_main {
-    max-width: 1110px;
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-content {
+    width: 10000px;
+    height: 350px;
     display: flex;
     align-items: center;
     gap: 30px;
-    height: 300px;
-    @media screen and (max-width: 768px) {
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 100%;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
 
 .carousel-card {
     max-width: 350px;
     width: 100%;
+    height: 250px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -89,6 +105,12 @@
     }
     &:nth-child(3) {
         border-top: 10px solid #3EC1F3;
+    }
+    &:nth-child(3) {
+        border-top: 10px solid #FF7235;
+    }
+    &:nth-child(3) {
+        border-top: 10px solid #BB7259;
     }
     &:hover {
         box-shadow: 0px 0px 50px 0px #00000021;
