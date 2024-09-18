@@ -85,7 +85,6 @@ function getRandomColor() {
 const marqueeContainer = document.querySelector('.marquee-container');
 const marqueeContent = document.querySelector('.marquee-content');
 
-
 marqueeContent.innerHTML += marqueeContent.innerHTML;
 
 let scrollAmount = 0;
@@ -93,7 +92,7 @@ let speed = 1;
 
 function marqueeAnimation() {
     scrollAmount -= speed;
-    if (Math.abs(scrollAmount) >= marqueeContent.scrollWidth / 1) {
+    if (Math.abs(scrollAmount) >= marqueeContent.scrollWidth / 2) {
         scrollAmount = 0;
     }
     marqueeContent.style.transform = `translateX(${scrollAmount}px)`;
@@ -101,7 +100,6 @@ function marqueeAnimation() {
 }
 
 marqueeAnimation();
-
 
 const colors = ['#FFBE21', '#4756DF', '#3EC1F3', '#FF7235', '#BB7259', '#34C759', '#FF2D55', '#AF52DE'];
 
@@ -113,12 +111,9 @@ function createCards(count) {
         const newCard = originalCard.cloneNode(true);
         const color = colors[i % colors.length];
         newCard.style.borderTop = `10px solid ${color}`;
-
         container.appendChild(newCard);
     }
-
-    const clone = container.cloneNode(true);
-    container.appendChild(clone);
+    marqueeContent.innerHTML += marqueeContent.innerHTML;
 }
 
 createCards(10);
